@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  <style>
+    table{
+  border: 3px solid  #a4b9c4
+  ;
+  font-family: monospace ;
+  border-collapse: collapse;
+}
+th{
+     font-size: 70%;
+  
+     border-radius: 0px;
+   background: #a4b9c4;
+    
+}
+td{
+  padding: 10px;
+}
+ .vertical-text {
+   background: #474747;
+    color: white;
+    writing-mode: vertical-rl;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 13px;
+    /* border: 1px solid black; */
+    padding: 10px;
+    transform: rotate(180deg);  }
+    .l1{
+          background: #e1e1e5;
+    }
+    .l2{
+             background: #d3d3c4;
+    }
+  </style>
+  </head>
+  <body style="       display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #c7c7c7, #8b838300);
+    height: 100vh;
+       width: 100vw;
+    background-size: cover;">
+    <h1 style="    font-family: monospace;">Time Table</h1>
+    <div style="    overflow: hidden;
+    border-radius: 6px;">
+      
+   
+    <table class="table">
+  <thead>
+    <tr>
+      <th rowspan="2" scope="col">#</th>
+      <th scope="col">1</th>
+      <th scope="col">2</th>
+      <th rowspan="2">10:40-11:00</th>
+      <th scope="col">3</th>
+      <th rowspan="2">12:00-1:00</th>
+      <th scope="col">4</th>
+      <th scope="col">5</th>
+      <th rowspan="2">3:00-3:15</th>
+      <th scope="col">6</th>
+      
+      <th scope="col">7</th>
+      
+    </tr>
+    <tr>
+      
+      <th>8:30-9:35</th>
+      <th>9:35-10:40</th>
+      
+      <th>11:00-12:00</th>
+      <th>1:00-2:00</th>
+      <th>2:00-3:00</th>
+      <th>3:15-4:15</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="l1">
+      <th scope="row">Monday</th>
+      <td>Wad lab</td>
+      <td>Wad lab</td>
+      <td class="vertical-text" rowspan="5" scope="col">Break</td>
+      <td>Wad lab</td>
+      <td class="vertical-text" rowspan="5" scope="col">Lunch Break</td>
+      <td>FLA(T)</td>
+      
+      <td>OS</td>
+      <td class="vertical-text" rowspan="5" scope="col">Break</td>
+      <td>DM</td>
+      <td>WAD</td>
+    </tr>
+
+    <tr class="l2">
+      <th scope="row">Tuesday</th>
+      <td>MSE</td>
+      <td>Honors</td>
+      <td>WAD</td>
+      <td>DCN(T)</td>
+      <td>FLA</td>
+      <td>OS</td>
+       <td>Honors</td>
+      
+    </tr>
+    <tr class="l1">
+      <th scope="row">wednesday</th>
+      <td>FLA</td>
+      <td>MSE</td>
+      
+      <td>Honors</td>
+      
+      <td>DCN(T)</td>
+      <td>WAD</td>
+      <td>OS</td>
+       <td>FLA</td>
+    </tr>
+    <tr class="l2">
+      <th scope="row">Thursday</th>
+      <td>FLA</td>
+      <td>FLA(T)</td>
+      <td>OS</td>
+      <td>DM</td>
+      <td>WAD</td>
+      <td>MTA</td>
+       <td>DM</td>
+    </tr>
+    <tr class="l1">
+      <th scope="row">Friday</th>
+      <td>OS LAB</td>
+      <td>OS LAB</td>
+      <td>Mentoring</td>
+      <td>OS LAB</td>
+      <td>DM</td>
+      <td>FLA</td>
+      <td>FLA(T)</td>
+    </tr>
+  </tbody>
+</table>
+ </div>
+  </body>
+</html>
