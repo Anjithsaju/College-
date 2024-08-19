@@ -9,6 +9,10 @@ nav{
     position: fixed;
     width: 100vw;
     top: 0;
+    z-index: 5;
+}
+body{
+    margin: 0;
 }
 nav a{
       margin: 0 20px;
@@ -24,4 +28,29 @@ nav a{
     width: 100vw;
     background-size: cover;
   background-position: center;
+}
+
+#sec1 h5{
+        position: relative;
+    top: 11vw;
+    margin: 0 15px;
+    font-size: 1rem;
+    color: rgb(83 81 81);
+    font-family: sans-serif;
+    width: 69%;
+    text-align: start;
+}
+#sec1 h1{
+    position: relative;
+    top: 10vw;
+    font-size: 3.5rem;
+    color: #7778e2;
+    margin: 0 10px;
+    width: 59%;
+}
+footer {
+    background: #7778e2;
+   color: #fff;
+   padding: 10px 0;
+   text-align: center;
 }
