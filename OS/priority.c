@@ -50,7 +50,7 @@ p[b]=temp;
 }
 
 }
-void sjf()
+void priority()
 {
 float sum1=0,sum2=0;
 asort();
@@ -71,12 +71,16 @@ p[i].ct=ict +p[i].bt;
 ict=p[i].ct;
 p[i].tat=p[i].ct-p[i].at;
 p[i].wt=p[i].tat-p[i].bt;
+sum1=sum1+p[i].tat;
+
+sum2=sum2+p[i].wt;
 btsort(p,i,n,ict);
 }
 printf("FCFS:\n");
-printf("Proccess id \tArrival time \tBurst time \tcompletion time \tTurn around time \tWaiting time\n");
+printf("Priority \tProccess id \tArrival time \tBurst time \tcompletion time \tTurn around time \tWaiting time\n");
 for(int i=0;i<n;i++)
 {
+printf("%d\t\t",p[i].pr);
 printf("%s\t\t",p[i].pid);
 printf("%d\t\t",p[i].at);
 printf("%d\t\t",p[i].bt);
@@ -103,6 +107,6 @@ scanf("%d",&p[i].bt);
 printf("Enter priority  of proccess(%d) :",(i+1));
 scanf("%d",&p[i].pr);
 }
-sjf();
+priority();
 }
 

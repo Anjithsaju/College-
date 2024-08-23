@@ -83,7 +83,7 @@ printf("%s\t\t",p[i].pid);
 printf("%d\t\t",p[i].at);
 printf("%d\t\t",p[i].bt);
 printf("%d\t\t\t",p[i].ct);
-printf("%d\t\t\t",p[i].tat);
+printf("%d\t\t\t\t",p[i].tat);
 printf("%d\t\t",p[i].wt);
 printf("\n");
 }
