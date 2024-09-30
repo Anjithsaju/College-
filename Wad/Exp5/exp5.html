@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+      form{
+            display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+      }
+      label
+      {
+            display: flex;
+    margin: 6px;
+    /* width: 264px; */
+    /* flex-direction: row; */
+    align-items: center;}
+    #main{
+          display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    }
+    </style>
+</head>
+<body>
+
+<h1> REGISTRATION FORM</h1>
+<form action="#" method="post">
+    
+<div id="main">
+  
+
+    <label for="userid">User id:<input type="text" id="userid" name="userid" required minlength="5" maxlength="12">
+    </label>
+    
+
+    <label for="password">Password:<input type="password" id="password" name="password" required minlength="7" maxlength="12">
+    </label>
+    
+
+    <label for="name">Name:<input type="text" id="name" name="name" required pattern="[A-Za-z\s]+">
+    </label>
+    
+
+    <label for="address">Address:<input type="text" id="address" name="address">
+   </label>
+    
+
+    <label for="country">Country:<select id="country" name="country" required>
+        <option value="" disabled selected>(Please select a country)</option>
+        <option value="us">United States</option>
+        <option value="ca">Canada</option>
+        <option value="in">India</option>
+        <option value="uk">United Kingdom</option>
+    </select></label>
+    
+    
+
+    <label for="zipcode">ZIP Code:<input type="text" id="zipcode" name="zipcode" required pattern="\d+">
+   </label>
+    
+
+    <label for="email">Email:<input type="email" id="email" name="email" required>
+    </label>
+    
+
+    <label>Sex:<input type="radio" id="male" name="sex" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="sex" value="female">
+    <label for="female">Female</label></label>
+    
+   
+
+    <label>Language:<input type="checkbox" id="english" name="language" value="english" required>
+    <label for="english">English</label>
+    <input type="checkbox" id="non-english" name="language" value="non-english">
+    <label for="non-english">Non English</label></label>
+    
+   
+</div>
+    <label for="about">About:<textarea id="about" name="about" rows="4" cols="50"></textarea>
+   </label>
+    
+
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
