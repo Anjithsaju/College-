@@ -1,0 +1,39 @@
+<html>
+  <body>
+    <script>
+      var i,
+        j,
+        temp,
+        total = 0,
+        avarage = 0;
+      var n = window.prompt("enter the number of student = ");
+      var arr = new Array();
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(window.prompt("Enter marks of student  " + i));
+      }
+      for (let i = 0; i < n; i++) {
+        document.write("<br> student mark = " + arr[i]);
+        total = total + arr[i];
+        if (arr[i] > 85) {
+          document.write("<br> student grade =  A");
+        } else if (arr[i] > 50) {
+          document.write("<br> student grade =  B");
+        } else if (arr[i] > 35) {
+          document.write("<br> student grade =  C");
+        } else {
+          document.write("<br> student grade =  F");
+        }
+      }
+      avarage = total / n;
+      if (avarage > 85) {
+        document.write("<br> avarage grade =  A");
+      } else if (avarage > 50) {
+        document.write("<br> avarage grade =  B");
+      } else if (avarage > 35) {
+        document.write("<br> avarage grade =  C");
+      } else {
+        document.write("<br> avarage grade =  F");
+      }
+    </script>
+  </body>
+</html>

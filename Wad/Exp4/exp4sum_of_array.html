@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <script>
+      function summ(n) {
+        for (let i = 1; i <= n; i++) {
+          arr[i] = parseInt(window.prompt("Enter element " + i));
+        }
+        for (let i = 1; i <= n; i++) {
+          sum = sum + arr[i];
+        }
+        alert("Sum =" + sum);
+      }
+      var n = window.prompt("enter the size of array = ");
+      var arr = new Array();
+      var sum = 0;
+      summ(n);
+    </script>
+  </body>
+</html>
