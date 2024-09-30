@@ -22,72 +22,162 @@
     flex-direction: column;
     align-items: flex-end;
     }
+    span{
+      color: red;
+    }
     </style>
 </head>
 <body>
 
 <h1> REGISTRATION FORM</h1>
-<form action="#" method="post">
+<form id="registrationForm" onsubmit="return validateForm()">
     
 <div id="main">
   
 
-    <label for="userid">User id:<input type="text" id="userid" name="userid" required minlength="5" maxlength="12">
+    <label for="userid">User id:<input type="text" id="userid" name="userid"  minlength="5" maxlength="12">
     </label>
     
-
-    <label for="password">Password:<input type="password" id="password" name="password" required minlength="7" maxlength="12">
+ <span class="error-message" id="userid-error">Required and must be of length 5 to 12.</span>
+    <label for="password">Password:<input type="password" id="password" name="password"  minlength="7" maxlength="12">
     </label>
     
+ <span class="error-message" id="password-error">Required and must be of length 7 to 12.</span>
 
-    <label for="name">Name:<input type="text" id="name" name="name" required pattern="[A-Za-z\s]+">
+    <label for="name">Name:<input type="text" id="name" name="name"  pattern="[A-Za-z\s]+">
     </label>
     
+ <span class="error-message" id="name-error">Required and alphabets only.</span>
 
-    <label for="address">Address:<input type="text" id="address" name="address">
+    <label for="address">Address:<input type="text" id="address" placeholder="Optional" name="address">
    </label>
-    
+      <span class="error-message" id="address-error">Optional.</span>
 
-    <label for="country">Country:<select id="country" name="country" required>
+
+    <label for="country">Country:<select id="country" name="country" >
         <option value="" disabled selected>(Please select a country)</option>
         <option value="us">United States</option>
         <option value="ca">Canada</option>
         <option value="in">India</option>
         <option value="uk">United Kingdom</option>
     </select></label>
-    
+    <span class="error-message" id="country-error">Required. Must select a country.</span>
+
     
 
-    <label for="zipcode">ZIP Code:<input type="text" id="zipcode" name="zipcode" required pattern="\d+">
+    <label for="zipcode">ZIP Code:<input type="text" id="zipcode" name="zipcode"  pattern="\d+">
    </label>
-    
+    <span class="error-message" id="zipcode-error">Required. Must be numeric only.</span>
 
-    <label for="email">Email:<input type="email" id="email" name="email" required>
+
+    <label for="email">Email:<input type="email" id="email" name="email" >
     </label>
-    
+      <span class="error-message" id="email-error">Required. Must be a valid email.</span>
 
-    <label>Sex:<input type="radio" id="male" name="sex" value="male" required>
+
+    <label>Sex:<input type="radio" id="male" name="sex" value="male" >
     <label for="male">Male</label>
     <input type="radio" id="female" name="sex" value="female">
     <label for="female">Female</label></label>
-    
+    <span class="error-message" id="sex-error">Required.</span>
+
    
 
-    <label>Language:<input type="checkbox" id="english" name="language" value="english" required>
+    <label>Language:<input type="checkbox" id="english" name="language" value="english" >
     <label for="english">English</label>
     <input type="checkbox" id="non-english" name="language" value="non-english">
     <label for="non-english">Non English</label></label>
-    
+    <span class="error-message" id="language-error">Required. At least one language must be selected.</span>
    
 </div>
-    <label for="about">About:<textarea id="about" name="about" rows="4" cols="50"></textarea>
+    <label for="about">About:<textarea id="about" placeholder="Optional" name="about" rows="4" cols="50"></textarea>
    </label>
     
+<span class="error-message" id="about-error">Optional.</span>
 
     <br><br>
     <input type="submit" value="Submit">
 </form>
 
+<script>
+    function validateForm() {
+        let isValid = true;
+
+        // User ID validation (length between 5 to 12)
+        const userId = document.getElementById('userid').value;
+        if (userId.length < 5 || userId.length > 12) {
+            document.getElementById('userid-error').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('userid-error').style.display = 'none';
+        }
+
+        // Password validation (length between 7 to 12)
+        const password = document.getElementById('password').value;
+        if (password.length < 7 || password.length > 12) {
+            document.getElementById('password-error').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('password-error').style.display = 'none';
+        }
+
+        // Name validation (alphabets only)
+        const name = document.getElementById('name').value;
+        const namePattern = /^[A-Za-z\s]+$/;
+        if (!namePattern.test(name)) {
+            document.getElementById('name-error').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('name-error').style.display = 'none';
+        }
+
+        // Country validation (must select a country)
+        const country = document.getElementById('country').value;
+        if (country === "") {
+            document.getElementById('country-error').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('country-error').style.display = 'none';
+        }
+
+        // ZIP Code validation (numeric only)
+        const zipcode = document.getElementById('zipcode').value;
+        const zipcodePattern = /^\d+$/;
+        if (!zipcodePattern.test(zipcode)) {
+            document.getElementById('zipcode-error').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('zipcode-error').style.display = 'none';
+        }
+
+        // Email validation
+       
+        // Sex validation (must select a radio option)
+        const sex = document.querySelector('input[name="sex"]:checked');
+        if (!sex) {
+            document.getElementById('sex-error').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('sex-error').style.display = 'none';
+        }
+
+        // Language validation (must select at least one checkbox)
+        const languageChecked = document.querySelector('input[name="language"]:checked');
+        if (!languageChecked) {
+            document.getElementById('language-error').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('language-error').style.display = 'none';
+        }
+
+        return isValid;
+    }
+   const h = document.querySelectorAll(".error-message");
+h.forEach(element => {
+    element.style.display = "none";
+});
+
+</script>
+
 </body>
 </html>
-
