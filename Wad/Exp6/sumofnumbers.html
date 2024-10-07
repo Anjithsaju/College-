@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style >
+      body{
+            display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Sum of two numbers</h2>
+    <label for="num1">Number1</label>
+    
+    <input type="number" name="" id="num1" value="" />
+    <label for="num2">Number2</label>
+      <input type="number" name="" id="num2" value="" />
+      <button id="btn" type="button">calculate</button>
+      <div id="out">
+        
+      </div>
+      <script type="text/javascript" charset="utf-8">
+        const num1 = document.getElementById("num1");
+const num2 = document.getElementById("num2");
+const btn = document.getElementById("btn");
+const out = document.getElementById("out");
+
+
+btn.addEventListener("click", () => {
+    
+   const output = Number(num1.value) + Number(num2.value);
+out.innerHTML = `<p>The sum of the numbers is ${output}</p>`;
+//alert(output);
+
+});
+
+      </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bubbling</title>
+<h1>Event bubbling</h1>
+   
+    <style>
+        div {
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid black;
+        }
+    </style>
+  </head>
+  <body>
+  <div id="parent"> Parent div
+      <div id = "child"> Child div
+            <div id = "inner">
+              Inner div
+            </div>
+      </div>
+  </div>
+ 
+  <script>
+    const pd = document.getElementById('parent');
+    const cd = document.getElementById('child');
+    const id = document.getElementById('inner');
+   
+    parent.addEventListener('click', () => {
+    alert('Parent Div clicked!');
+});
+
+   child.addEventListener('click', () => {
+    alert('Child Div clicked!');
+});
+
+  inner.addEventListener('click', () => {
+      alert('Inner Div clicked!');
+  });
+   
+  </script>
+  </body>
+</html>

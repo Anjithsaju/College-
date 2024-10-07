@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style type="text/css" media="all">
+      body{
+  padding: 25px;
+}
+.title {
+	color: #5C6AC4;
+}
+:root {
+    --grid-columns: 4; /* Change this to set the number of columns */
+    --grid-rows: 2; /* Change this to set the number of rows */
+}
+body
+{
+  font-family:Sans-Serif ;
+}
+.main
+{
+     display: grid;
+    width: inherit;
+    height: auto;
+    height: 65%;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), auto);
+    gap: 10px;
+    justify-items: center;
+}
+.contain
+{
+    
+    background: linear-gradient(113deg, #434343, #07153d);
+        background: lightsteelblue;
+    padding: 17px;
+    border-radius: 14px;
+    width: clamp(126px, 74vw, 269px);
+    height: clamp(211px, 107vw, 432px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+}
+button{
+     border-radius: 30px;
+    width: 100%;
+    border: none;
+}
+#sbt{
+      border-radius: 10px;
+    width: 100%;
+    border: none;
+    height: 12%;
+}
+.out
+{
+    align-content: center;
+      background: white;
+    height: 20%;
+    width: 100%;
+    border-radius: 4px;
+    align-items: center;
+    text-align: center;
+}
+.back{
+        display: flex;
+    width: 100%;
+    gap: 8px;
+    height: 8%;
+}
+    </style>
+  </head>
+  <body>
+    <section class="contain">
+      <div class="out">
+        
+      </div>
+      <div class="back">
+        <button id="clearAll" type="button">clearall</button>
+    <button id="backspace" type="button">&#x232B;</button>
+      </div>
+    
+      <section class="main">
+        
+        <button type="button">7</button>
+        <button type="button">8</button>
+        <button type="button">9</button>
+        <button type="button">+</button>
+        <button type="button">4</button>
+        <button type="button">5</button>
+        <button type="button">6</button>
+        <button type="button">-</button>
+        <button type="button">1</button>
+        <button type="button">2</button>
+        <button type="button">3</button>
+        <button type="button">*</button>
+         <button type="button">%</button>
+        <button type="button">0</button>
+        <button type="button">.</button>
+         <button type="button">/</button>
+         </section>
+        <button id="sbt" type="submit">=</button>
+        </section>
+        
+       <script type="text/javascript" charset="utf-8">
+         
+        const buttons = document.querySelectorAll('.main button');
+        const outputDiv = document.querySelector('.out'); 
+
+        
+        function handleButtonClick(event) {
+            const value = event.target.textContent;
+            outputDiv.textContent += value;
+        }
+
+      
+        buttons.forEach(button => {
+            button.addEventListener('click', handleButtonClick);
+        });
+
+       
+        document.getElementById('sbt').addEventListener('click', () => {
+            try {
+                const result = eval(outputDiv.textContent);
+                outputDiv.textContent = result; 
+            } catch (error) {
+                outputDiv.textContent = 'Error'; 
+            }
+        });
+        
+        document.getElementById('clearAll').addEventListener('click', () => {
+            outputDiv.textContent = ''; 
+        });
+
+       
+        document.getElementById('backspace').addEventListener('click', () => {
+            outputDiv.textContent = outputDiv.textContent.slice(0, -1);
+        });
+       </script>
+     
+  </body>
+</html>

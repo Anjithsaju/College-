@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body id="body">
+    <button id="btn" type="click">change colour</button>
+    <script type="text/javascript" charset="utf-8">
+      const btn = document.getElementById("btn");
+       const bd = document.getElementById("body");
+   btn.addEventListener("mouseover", () => {
+   
+    btn.style.backgroundColor = "red"; 
+     bd.style.backgroundColor = ""; 
+});
+
+btn.addEventListener("mouseout", () => {
+   
+    btn.style.backgroundColor = ""; 
+    bd.style.backgroundColor = "green"; 
+});
+    </script>
+  </body>
+</html>
