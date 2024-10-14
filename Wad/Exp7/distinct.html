@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+     
+      <script>
+      const getDistinctElements = (arr) => {
+    return [...new Set(arr)];
+};
+
+const input = prompt("Enter numbers separated by spaces");
+const numbers = input.split(" ").map(Number);
+const distinctNumbers = getDistinctElements(numbers);
+
+
+alert(`Original Array: ${numbers}\nDistinct Array: ${distinctNumbers}`);
+
+      </script>
+  </body>
+</html>
